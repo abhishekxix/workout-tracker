@@ -19,10 +19,14 @@ app.use(xss());
 
 // other imports
 const { connectDB } = require('./db');
+const { errorHandler } = require('./middleware');
 
 // configuration
 const port = process.env.PORT || 3000;
 app.use(morgan('tiny'));
+
+// error handling
+app.use(errorHandler);
 
 const start = async () => {
   try {
