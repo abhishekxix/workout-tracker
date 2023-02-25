@@ -2,6 +2,7 @@ require('express-async-errors');
 require('dotenv').config();
 const morgan = require('morgan');
 const express = require('express');
+const cookieParser = require('cookie-parser');
 
 // security packages
 const helmet = require('helmet');
@@ -10,9 +11,10 @@ const xss = require('xss-clean');
 
 // assign an express instance
 const app = express();
+app.use(express.json());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // use security middleware
-app.use(express.json());
 app.use(helmet());
 app.use(cors());
 app.use(xss());
