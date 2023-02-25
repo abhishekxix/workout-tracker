@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const createTokenUser = require('./createTokenUser');
 const createJWT = require('./createJWT');
 
-const sendVerificationMail = async (user) => {
+const sendVerificationMail = async (user, isPWReset) => {
   const tokenUser = createTokenUser(user);
   const verificationToken = createJWT(
     tokenUser,
@@ -21,8 +21,12 @@ const sendVerificationMail = async (user) => {
   await transporter.sendMail({
     from: `"No reply <verification@worrkout-tracker>"`,
     to: tokenUser.email,
-    subject: 'Verify your email address',
-    html: `Here is your auth token: <br/>
+    subject: isPWReset ? 'Reset Password' : 'Verify your email address',
+    html: `${
+      isPWReset
+        ? 'Enter this token to reset password'
+        : 'Here is your auth token'
+    }: <br/>
     <code>${verificationToken} </code>`,
   });
 };
