@@ -23,19 +23,11 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide password'],
   },
-  phoneNumber: {
-    type: String,
-    validate: validator.isMobilePhone,
-  },
   isEmailVerified: {
     type: Boolean,
     default: false,
   },
   isDeletionVerified: {
-    type: Boolean,
-    default: false,
-  },
-  isPhoneVerified: {
     type: Boolean,
     default: false,
   },
