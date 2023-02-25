@@ -20,10 +20,16 @@ app.use(xss());
 // other imports
 const { connectDB } = require('./db');
 const { errorHandler } = require('./middleware');
+const { authRouter } = require('./routers');
 
 // configuration
 const port = process.env.PORT || 3000;
 app.use(morgan('tiny'));
+
+const API_ROOT = '/api/v1';
+
+// routing
+app.use(`${API_ROOT}/auth`, authRouter);
 
 // error handling
 app.use(errorHandler);
