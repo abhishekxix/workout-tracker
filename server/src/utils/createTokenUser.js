@@ -1,5 +1,5 @@
-const createTokenUser = ({ name, email, region }) => {
-  return { name, email, region };
+const createTokenUser = ({ name, email, region, _id: userID }) => {
+  return { name, email, region, userID };
 };
 
 module.exports = createTokenUser;

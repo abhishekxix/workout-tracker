@@ -7,16 +7,14 @@ const { createTokenUser } = require('../utils');
 const verifyEmail = async (req, res) => {
   const { verificationToken } = req.params;
 
-  let tokenUser = undefined;
+  let payload = undefined;
   try {
-    tokenUser = createTokenUser(
-      jwt.verify(verificationToken, process.env.JWT_SECRET),
-    );
+    payload = jwt.verify(verificationToken, process.env.JWT_SECRET);
   } catch (error) {
     throw new UnauthorizedError('invalid verification token');
   }
 
-  const user = await User.findOne({ email: tokenUser.email });
+  const user = await User.findOne({ email: payload.email });
 
   if (!user) throw new UnauthorizedError('invalid user');
 
@@ -28,7 +26,10 @@ const verifyEmail = async (req, res) => {
 
   // TODO: implement login after verification
 
-  res.status(StatusCodes.OK).json({ msg: 'email verification successful' });
+  res.status(StatusCodes.OK).json({
+    msg: 'email verification successful',
+    user: createTokenUser(user),
+  });
 };
 
 module.exports = verifyEmail;
