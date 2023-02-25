@@ -4,4 +4,5 @@ module.exports = {
   login: require('./login'),
   logout: require('./logout'),
   resetPassword: require('./resetPassword'),
+  verifyAndResetPassword: require('./verifyAndResetPassword'),
 };
