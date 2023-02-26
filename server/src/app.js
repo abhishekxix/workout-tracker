@@ -32,6 +32,7 @@ const API_ROOT = '/api/v1';
 
 // routing
 app.use(`${API_ROOT}/auth`, authRouter);
+app.use(`${API_ROOT}/user`);
 
 // error handling
 app.use(errorHandler);
