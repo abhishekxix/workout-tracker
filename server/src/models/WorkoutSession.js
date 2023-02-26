@@ -7,6 +7,7 @@ const WorkoutSessionSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: 50,
     match: /^[a-zA-Z0-9\s]+$/,
+    required: true,
   },
 
   dailyStatID: {
