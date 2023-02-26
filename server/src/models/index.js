@@ -4,4 +4,5 @@ module.exports = {
   Measurement: require('./Measurement'),
   WorkoutSession: require('./WorkoutSession'),
   Lift: require('./Lift'),
+  Set: require('./Set'),
 };
