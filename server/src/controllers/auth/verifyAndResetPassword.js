@@ -1,7 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
-const { UnauthorizedError, BadRequestError } = require('../errors');
-const { User } = require('../models');
-const { verifyJWT } = require('../utils');
+const { UnauthorizedError, BadRequestError } = require('../../errors');
+const { User } = require('../../models');
+const { verifyJWT } = require('../../utils');
 
 const verifyAndResetPassword = async (req, res) => {
   const { verificationToken, newPassword } = req.body;

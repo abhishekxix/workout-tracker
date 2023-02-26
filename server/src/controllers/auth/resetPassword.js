@@ -1,7 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
-const { BadRequestError, NotFoundError } = require('../errors');
-const { User } = require('../models');
-const { sendVerificationMail } = require('../utils');
+const { BadRequestError, NotFoundError } = require('../../errors');
+const { User } = require('../../models');
+const { sendVerificationMail } = require('../../utils');
 
 const resetPassword = async (req, res) => {
   const { email } = req.body;

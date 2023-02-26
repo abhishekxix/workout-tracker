@@ -6,7 +6,7 @@ const {
   logout,
   resetPassword,
   verifyAndResetPassword,
-} = require('../controllers');
+} = require('../controllers/auth');
 
 const authRouter = express.Router();
 

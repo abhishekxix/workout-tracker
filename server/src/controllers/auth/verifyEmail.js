@@ -1,7 +1,11 @@
 const { StatusCodes } = require('http-status-codes');
-const { UnauthorizedError, BadRequestError } = require('../errors');
-const { User } = require('../models');
-const { createTokenUser, attachTokenCookie, verifyJWT } = require('../utils');
+const { UnauthorizedError, BadRequestError } = require('../../errors');
+const { User } = require('../../models');
+const {
+  createTokenUser,
+  attachTokenCookie,
+  verifyJWT,
+} = require('../../utils');
 
 const verifyEmail = async (req, res) => {
   const { verificationToken } = req.params;

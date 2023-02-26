@@ -1,6 +1,6 @@
 const { StatusCodes } = require('http-status-codes');
-const { User } = require('../models');
-const { sendVerificationMail } = require('../utils');
+const { User } = require('../../models');
+const { sendVerificationMail } = require('../../utils');
 
 const registerUser = async (req, res) => {
   const { name, email, password, region } = req.body;

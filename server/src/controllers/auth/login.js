@@ -3,13 +3,13 @@ const {
   BadRequestError,
   NotFoundError,
   UnauthorizedError,
-} = require('../errors');
-const { User } = require('../models');
+} = require('../../errors');
+const { User } = require('../../models');
 const {
   sendVerificationMail,
   createTokenUser,
   attachTokenCookie,
-} = require('../utils');
+} = require('../../utils');
 
 const login = async (req, res) => {
   const { email, password } = req.body;
