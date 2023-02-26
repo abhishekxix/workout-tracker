@@ -6,4 +6,5 @@ module.exports = {
   Lift: require('./Lift'),
   Set: require('./Set'),
   CardioSession: require('./CardioSession'),
+  OptionalAttribute: require('./OptionalAttribute'),
 };
