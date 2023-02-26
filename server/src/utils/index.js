@@ -3,4 +3,5 @@ module.exports = {
   createTokenUser: require('./createTokenUser'),
   createJWT: require('./createJWT'),
   attachTokenCookie: require('./attachTokenCookie'),
+  verifyJWT: require('./verifyJWT'),
 };

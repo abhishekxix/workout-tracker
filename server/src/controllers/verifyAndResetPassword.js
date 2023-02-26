@@ -1,7 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
-const jwt = require('jsonwebtoken');
 const { UnauthorizedError, BadRequestError } = require('../errors');
 const { User } = require('../models');
+const { verifyJWT } = require('../utils');
 
 const verifyAndResetPassword = async (req, res) => {
   const { verificationToken, newPassword } = req.body;
@@ -9,7 +9,7 @@ const verifyAndResetPassword = async (req, res) => {
   let payload = undefined;
 
   try {
-    payload = jwt.verify(verificationToken, process.env.JWT_SECRET);
+    payload = verifyJWT(verificationToken);
   } catch (error) {
     throw new UnauthorizedError('invalid verification token.');
   }

@@ -1,6 +1,5 @@
 const { UnauthorizedError } = require('../errors');
-const jwt = require('jsonwebtoken');
-const { createTokenUser } = require('../utils');
+const { createTokenUser, verifyJWT } = require('../utils');
 
 const authentication = async (req, res, next) => {
   const { authToken } = req.signedCookies;
@@ -13,7 +12,7 @@ const authentication = async (req, res, next) => {
   let tokenUser = null;
 
   try {
-    tokenUser = createTokenUser(jwt.verify(authToken, process.env.JWT_SECRET));
+    tokenUser = createTokenUser(verifyJWT(authToken));
   } catch (error) {
     throw new UnauthorizedError('invalid token.');
   }
