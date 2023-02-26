@@ -9,7 +9,7 @@ const WorkoutSessionSchema = new mongoose.Schema({
     match: /^[a-zA-Z0-9\s]+$/,
   },
 
-  dailyStatsID: {
+  dailyStatID: {
     type: mongoose.Types.ObjectId,
     ref: 'DailyStat',
     required: true,
