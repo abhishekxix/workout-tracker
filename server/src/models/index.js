@@ -5,4 +5,5 @@ module.exports = {
   WorkoutSession: require('./WorkoutSession'),
   Lift: require('./Lift'),
   Set: require('./Set'),
+  CardioSession: require('./CardioSession'),
 };
