@@ -1,0 +1,28 @@
+const { StatusCodes } = require('http-status-codes');
+const { BadRequestError } = require('../../errors');
+const { DailyStat } = require('../../models');
+
+const create = async (req, res) => {
+  const { user } = res.locals;
+  const { date, weight } = req.body;
+
+  if (!(date && weight))
+    throw new BadRequestError('please provide both date and weight.');
+
+  await DailyStat.create({
+    date,
+    weight,
+    userID: user.userID,
+  });
+
+  res.status(StatusCodes.CREATED).json({
+    msg: 'daily stat created',
+    dailyStat: {
+      date,
+      weight,
+      userID: user.userID,
+    },
+  });
+};
+
+module.exports = create;

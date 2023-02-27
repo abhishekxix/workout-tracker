@@ -28,6 +28,7 @@ const DailyStatSchema = new mongoose.Schema({
       },
       message: '{VALUE} is not a valid date.',
     },
+    unique: true,
   },
 
   weight: {
