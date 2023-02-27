@@ -7,9 +7,9 @@ const DailyStatSchema = new mongoose.Schema({
     validate: {
       validator: function (v) {
         const isLeapYear = (year) =>
-          (year % 4 === 0 && year % 100 !== 0) || year % 400;
+          (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 
-        if (!/([0-9]{2}-){2}[0-9]{4}/.test('10-20-2001')) return false;
+        if (!/([0-9]{2}-){2}[0-9]{4}/.test(v)) return false;
 
         const [date, month, year] = v
           .split('-')
