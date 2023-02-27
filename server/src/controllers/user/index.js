@@ -3,4 +3,5 @@ module.exports = {
   updateName: require('./updateName'),
   updateEmail: require('./updateEmail'),
   updatePassword: require('./updatePassword'),
+  deleteAccount: require('./deleteAccount'),
 };

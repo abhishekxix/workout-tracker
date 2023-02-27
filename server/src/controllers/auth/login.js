@@ -31,6 +31,10 @@ const login = async (req, res) => {
     );
   }
 
+  if (user.isDeletionVerified) user.isDeletionVerified = false;
+
+  await user.save();
+
   const tokenUser = createTokenUser(user);
   attachTokenCookie(res, tokenUser);
 
