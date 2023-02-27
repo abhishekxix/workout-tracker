@@ -30,6 +30,8 @@ const verifyAccountDeletion = async (req, res) => {
 
   await User.deleteOne({ _id: tokenUser.userID });
 
+  res.clearCookie('authToken');
+
   res.status(StatusCodes.OK).json({
     msg: 'account deleted successfully.',
   });
