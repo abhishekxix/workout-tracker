@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
+const DailyStat = require('./DailyStat');
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -290,8 +291,9 @@ UserSchema.pre('save', async function () {
   }
 });
 
-UserSchema.post('deleteOne', async function () {
+UserSchema.pre('deleteOne', async function () {
   // Delete associated documents
+  await DailyStat.deleteMany({ userID: this.getQuery() });
 });
 
 UserSchema.methods.comparePassword = async function (candidatePassword) {

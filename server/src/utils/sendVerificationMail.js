@@ -25,15 +25,15 @@ const sendVerificationMail = async (user, mailType) => {
     subject:
       mailType === constants.mailType.PASSWORD_RESET
         ? 'Reset Password'
-        : mailType === constants.mailType.VERIFICATION
-        ? 'Verify your email address'
-        : 'Delete Account',
+        : mailType === constants.mailType.DELETE_ACCOUNT
+        ? 'Delete Account'
+        : 'Verify your email address',
     html: `${
       mailType === constants.mailType.PASSWORD_RESET
         ? 'Enter this token to reset password'
-        : mailType === constants.mailType.VERIFICATION
-        ? 'Here is your auth token'
-        : 'Enter this token to delete your account'
+        : mailType === constants.mailType.DELETE_ACCOUNT
+        ? 'Enter this token to delete your account'
+        : 'Here is your auth token'
     }: <br/>
     <code>${verificationToken} </code>`,
   });

@@ -4,4 +4,5 @@ module.exports = {
   updateEmail: require('./updateEmail'),
   updatePassword: require('./updatePassword'),
   deleteAccount: require('./deleteAccount'),
+  verifyAccountDeletion: require('./verifyAccountDeletion'),
 };
