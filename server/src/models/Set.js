@@ -1,6 +1,12 @@
 const { default: mongoose } = require('mongoose');
 
 const SetSchema = new mongoose.Schema({
+  userID: {
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+
   liftID: {
     type: mongoose.Types.ObjectId,
     required: true,

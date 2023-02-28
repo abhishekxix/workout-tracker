@@ -1,6 +1,12 @@
 const { default: mongoose } = require('mongoose');
 
 const MeasurementSchema = new mongoose.Schema({
+  userID: {
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+
   dailyStatID: {
     type: mongoose.Types.ObjectId,
     ref: 'DailyStat',

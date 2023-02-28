@@ -1,6 +1,12 @@
 const { default: mongoose } = require('mongoose');
 
 const LiftSchema = new mongoose.Schema({
+  userID: {
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+
   workoutSessionID: {
     type: mongoose.Types.ObjectId,
     required: true,

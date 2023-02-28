@@ -2,6 +2,12 @@ const { default: mongoose } = require('mongoose');
 const moment = require('moment');
 
 const WorkoutSessionSchema = new mongoose.Schema({
+  userID: {
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+
   name: {
     type: String,
     minlength: 1,

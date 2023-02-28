@@ -1,6 +1,12 @@
 const { default: mongoose } = require('mongoose');
 
 const CardioSessionSchema = new mongoose.Schema({
+  userID: {
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+
   name: {
     type: String,
     minlength: 1,
