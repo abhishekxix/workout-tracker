@@ -3,4 +3,5 @@ module.exports = {
   getDailyStats: require('./getDailyStats'),
   getDailyStat: require('./getDailyStat'),
   updateDailyStat: require('./updateDailyStat'),
+  deleteDailyStat: require('./deleteDailyStat'),
 };
