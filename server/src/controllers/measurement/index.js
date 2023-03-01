@@ -3,4 +3,5 @@ module.exports = {
   getMeasurements: require('./getMeasurements'),
   getMeasurement: require('./getMeasurement'),
   updateMeasurement: require('./updateMeasurement'),
+  deleteMeasurement: require('./deleteMeasurement'),
 };

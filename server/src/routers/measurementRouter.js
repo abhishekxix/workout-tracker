@@ -4,6 +4,7 @@ const {
   getMeasurements,
   getMeasurement,
   updateMeasurement,
+  deleteMeasurement,
 } = require('../controllers/measurement');
 const { authentication } = require('../middleware');
 
@@ -15,6 +16,7 @@ measurementRouter.route('/').post(create).get(getMeasurements);
 measurementRouter
   .route('/:measurementID')
   .get(getMeasurement)
-  .patch(updateMeasurement);
+  .patch(updateMeasurement)
+  .delete(deleteMeasurement);
 
 module.exports = measurementRouter;
