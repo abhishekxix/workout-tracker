@@ -47,4 +47,9 @@ const WorkoutSessionSchema = new mongoose.Schema({
   },
 });
 
+WorkoutSessionSchema.index(
+  { startTime: 1, endTime: 1, dailyStatID: 1 },
+  { unique: true },
+);
+
 module.exports = mongoose.model('WorkoutSession', WorkoutSessionSchema);
