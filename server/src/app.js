@@ -22,7 +22,12 @@ app.use(xss());
 // other imports
 const { connectDB } = require('./db');
 const { errorHandler } = require('./middleware');
-const { authRouter, userRouter, dailyStatRouter } = require('./routers');
+const {
+  authRouter,
+  userRouter,
+  dailyStatRouter,
+  measurementRouter,
+} = require('./routers');
 
 // configuration
 const port = process.env.PORT || 3000;
@@ -34,6 +39,7 @@ const API_ROOT = '/api/v1';
 app.use(`${API_ROOT}/auth`, authRouter);
 app.use(`${API_ROOT}/user`, userRouter);
 app.use(`${API_ROOT}/dailyStat`, dailyStatRouter);
+app.use(`${API_ROOT}/measurement`, measurementRouter);
 
 // error handling
 app.use(errorHandler);

@@ -12,9 +12,16 @@ const create = async (req, res) => {
     userID: user.userID,
   });
 
-  res
-    .status(StatusCodes.OK)
-    .json({ msg: 'success', measurement: createdMeasurement });
+  res.status(StatusCodes.OK).json({
+    msg: 'success',
+    measurement: {
+      dailyStatID,
+      bodyPart,
+      measurement,
+      userID: user.userID,
+      _id: createdMeasurement._id,
+    },
+  });
 };
 
 module.exports = create;

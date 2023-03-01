@@ -46,6 +46,6 @@ const MeasurementSchema = new mongoose.Schema({
   },
 });
 
-MeasurementSchema.index({ dailyStatID: 1, bodyPart: 1 }, { unique: true });
+MeasurementSchema.index({ dailyStatID: 1, bodyPart: 'text' }, { unique: true });
 
 module.exports = mongoose.model('Measurement', MeasurementSchema);
