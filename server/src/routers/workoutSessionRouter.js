@@ -4,6 +4,7 @@ const {
   getWorkoutSessions,
   getWorkoutSession,
   updateWorkoutSession,
+  deleteWorkoutSession,
 } = require('../controllers/workoutSession');
 const { authentication } = require('../middleware');
 
@@ -14,6 +15,7 @@ workoutSessionRouter.route('/').post(create).get(getWorkoutSessions);
 workoutSessionRouter
   .route('/:workoutSessionID')
   .get(getWorkoutSession)
-  .patch(updateWorkoutSession);
+  .patch(updateWorkoutSession)
+  .delete(deleteWorkoutSession);
 
 module.exports = workoutSessionRouter;
