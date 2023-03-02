@@ -5,4 +5,5 @@ module.exports = {
   measurementRouter: require('./measurementRouter'),
   workoutSessionRouter: require('./workoutSessionRouter'),
   liftRouter: require('./liftRouter'),
+  setRouter: require('./setRouter'),
 };
