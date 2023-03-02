@@ -3,4 +3,5 @@ module.exports = {
   getLifts: require('./getLifts'),
   getLift: require('./getLift'),
   updateLift: require('./updateLift'),
+  deleteLift: require('./deleteLift'),
 };
