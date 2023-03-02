@@ -3,6 +3,7 @@ const {
   createOptionalAttribute,
   getOptionalAttributes,
   getOptionalAttribute,
+  updateOptionalAttribute,
 } = require('../controllers/optionalAttribute');
 const { authentication } = require('../middleware');
 
@@ -17,5 +18,6 @@ optionalAttributeRouter
 
 optionalAttributeRouter
   .route('/:optionalAttributeID')
-  .get(getOptionalAttribute);
+  .get(getOptionalAttribute)
+  .patch(updateOptionalAttribute);
 module.exports = optionalAttributeRouter;
