@@ -30,6 +30,7 @@ const {
   workoutSessionRouter,
   liftRouter,
   setRouter,
+  cardioSessionRouter,
 } = require('./routers');
 
 // configuration
@@ -46,6 +47,7 @@ app.use(`${API_ROOT}/measurement`, measurementRouter);
 app.use(`${API_ROOT}/workoutSession`, workoutSessionRouter);
 app.use(`${API_ROOT}/lift`, liftRouter);
 app.use(`${API_ROOT}/set`, setRouter);
+app.use(`${API_ROOT}/cardioSession`, cardioSessionRouter);
 
 // error handling
 app.use(errorHandler);

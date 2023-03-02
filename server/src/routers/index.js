@@ -6,4 +6,5 @@ module.exports = {
   workoutSessionRouter: require('./workoutSessionRouter'),
   liftRouter: require('./liftRouter'),
   setRouter: require('./setRouter'),
+  cardioSessionRouter: require('./cardioSessionRouter'),
 };
