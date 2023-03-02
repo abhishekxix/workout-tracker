@@ -3,4 +3,5 @@ module.exports = {
   getOptionalAttributes: require('./getOptionalAttributes'),
   getOptionalAttribute: require('./getOptionalAttribute'),
   updateOptionalAttribute: require('./updateOptionalAttribute'),
+  deleteOptionalAttribute: require('./deleteOptionalAttribute'),
 };
