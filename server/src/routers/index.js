@@ -7,4 +7,5 @@ module.exports = {
   liftRouter: require('./liftRouter'),
   setRouter: require('./setRouter'),
   cardioSessionRouter: require('./cardioSessionRouter'),
+  optionalAttributeRouter: require('./optionalAttributeRouter'),
 };
