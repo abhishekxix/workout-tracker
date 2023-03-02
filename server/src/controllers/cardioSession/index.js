@@ -3,4 +3,5 @@ module.exports = {
   getCardioSessions: require('./getCardioSessions'),
   getCardioSession: require('./getCardioSession'),
   updateCardioSession: require('./updateCardioSession'),
+  deleteCardioSession: require('./deleteCardioSession'),
 };

@@ -4,6 +4,7 @@ const {
   getCardioSessions,
   getCardioSession,
   updateCardioSession,
+  deleteCardioSession,
 } = require('../controllers/cardioSession');
 const { authentication } = require('../middleware');
 
@@ -15,6 +16,7 @@ cardioSessionRouter.route('/').post(createCardioSession).get(getCardioSessions);
 cardioSessionRouter
   .route('/:cardioSessionID')
   .get(getCardioSession)
-  .patch(updateCardioSession);
+  .patch(updateCardioSession)
+  .delete(deleteCardioSession);
 
 module.exports = cardioSessionRouter;
