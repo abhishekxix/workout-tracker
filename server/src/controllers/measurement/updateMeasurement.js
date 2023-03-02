@@ -1,6 +1,6 @@
 const { StatusCodes } = require('http-status-codes');
-const { NotFoundError } = require('../../errors');
-const { Measurement } = require('../../models');
+const { NotFoundError, UnauthorizedError } = require('../../errors');
+const { Measurement, DailyStat } = require('../../models');
 
 const updateMeasurement = async (req, res) => {
   const { measurementID } = req.params;
@@ -19,7 +19,14 @@ const updateMeasurement = async (req, res) => {
     throw new NotFoundError(`no measurement found with id: ${measurementID}`);
 
   if (bodyPart) documentToUpdate.bodyPart = bodyPart;
-  if (dailyStatID) documentToUpdate.dailyStatID = dailyStatID;
+  if (dailyStatID) {
+    const dailyStat = await DailyStat.findOne({
+      _id: dailyStatID,
+      userID: user.userID,
+    });
+    if (!dailyStat) throw new UnauthorizedError('invalid dailyStatID');
+    documentToUpdate.dailyStatID = dailyStatID;
+  }
   if (measurement) documentToUpdate.measurement = measurement;
 
   await documentToUpdate.save();

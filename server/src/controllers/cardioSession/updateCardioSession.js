@@ -23,7 +23,10 @@ const updateCardioSession = async (req, res) => {
     );
 
   if (workoutSessionID) {
-    const workoutSession = await WorkoutSession.findById(workoutSessionID);
+    const workoutSession = await WorkoutSession.findOne({
+      _id: workoutSessionID,
+      userID,
+    });
 
     if (!workoutSession)
       throw new UnauthorizedError('invalid workoutSessionID');
