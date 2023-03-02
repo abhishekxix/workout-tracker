@@ -2,6 +2,7 @@ const express = require('express');
 const {
   createOptionalAttribute,
   getOptionalAttributes,
+  getOptionalAttribute,
 } = require('../controllers/optionalAttribute');
 const { authentication } = require('../middleware');
 
@@ -14,4 +15,7 @@ optionalAttributeRouter
   .post(createOptionalAttribute)
   .get(getOptionalAttributes);
 
+optionalAttributeRouter
+  .route('/:optionalAttributeID')
+  .get(getOptionalAttribute);
 module.exports = optionalAttributeRouter;
