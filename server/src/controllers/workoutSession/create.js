@@ -21,6 +21,7 @@ const create = async (req, res) => {
       name,
       startTime,
       endTime,
+      _id: workoutSession._id,
     },
   });
 };

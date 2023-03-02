@@ -9,7 +9,7 @@ const create = async (req, res) => {
   if (!(date && weight))
     throw new BadRequestError('please provide both date and weight.');
 
-  await DailyStat.create({
+  const dailyStat = await DailyStat.create({
     date,
     weight,
     userID: user.userID,
@@ -21,6 +21,7 @@ const create = async (req, res) => {
       date,
       weight,
       userID: user.userID,
+      _id: dailyStat._id,
     },
   });
 };
