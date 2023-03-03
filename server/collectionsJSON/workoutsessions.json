@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "64018e8b1efbb8cdfe53fa26"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "name": "leg workout",
+  "dailyStatID": {
+    "$oid": "64018e6a1efbb8cdfe53fa20"
+  },
+  "startTime": "07:00",
+  "endTime": "07:30",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64018e971efbb8cdfe53fa28"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "name": "leg workout",
+  "dailyStatID": {
+    "$oid": "64018e6a1efbb8cdfe53fa20"
+  },
+  "startTime": "19:00",
+  "endTime": "20:30",
+  "__v": 0
+}]

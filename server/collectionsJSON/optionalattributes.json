@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "64018ed41efbb8cdfe53fa37"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "cardioSessionID": {
+    "$oid": "64018ec31efbb8cdfe53fa34"
+  },
+  "key": "body temperature",
+  "value": "99.7F",
+  "__v": 0
+}]

@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "64018e791efbb8cdfe53fa22"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "dailyStatID": {
+    "$oid": "64018e6a1efbb8cdfe53fa20"
+  },
+  "bodyPart": "left arm",
+  "measurement": 500,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64018e801efbb8cdfe53fa24"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "dailyStatID": {
+    "$oid": "64018e6a1efbb8cdfe53fa20"
+  },
+  "bodyPart": "right arm",
+  "measurement": 500,
+  "__v": 0
+}]

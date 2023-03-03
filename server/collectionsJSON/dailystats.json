@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "64018e621efbb8cdfe53fa1e"
+  },
+  "date": "02-03-2023",
+  "weight": 75000,
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64018e6a1efbb8cdfe53fa20"
+  },
+  "date": "05-03-2023",
+  "weight": 75000,
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "__v": 0
+}]

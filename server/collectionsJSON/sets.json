@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "64018ee51efbb8cdfe53fa39"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "liftID": {
+    "$oid": "64018eae1efbb8cdfe53fa2e"
+  },
+  "weight": 129000,
+  "reps": 12,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64018ee71efbb8cdfe53fa3b"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "liftID": {
+    "$oid": "64018eae1efbb8cdfe53fa2e"
+  },
+  "weight": 129000,
+  "reps": 12,
+  "__v": 0
+}]

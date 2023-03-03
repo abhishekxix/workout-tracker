@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "name": "abhishek",
+  "email": "abhishek@gmail.com",
+  "password": "$2a$10$iDlYIWJ74iDXoRiZ6NQhIuBYAX5YX/Y.3fsIIKnk8TwZqpRnmlfEu",
+  "isEmailVerified": true,
+  "isDeletionVerified": false,
+  "region": "IN",
+  "__v": 0
+}]

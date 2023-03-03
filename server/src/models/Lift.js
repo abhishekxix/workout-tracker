@@ -1,4 +1,5 @@
 const { default: mongoose } = require('mongoose');
+const Set = require('./Set');
 
 const LiftSchema = new mongoose.Schema({
   userID: {
@@ -34,6 +35,23 @@ const LiftSchema = new mongoose.Schema({
       'other',
     ],
   },
+});
+
+LiftSchema.pre('deleteMany', async function () {
+  const documentsToBeDeleted = await this.model.find(this.getFilter());
+  const deletionPromises = [];
+
+  documentsToBeDeleted.forEach(({ _id: liftID }) => {
+    deletionPromises.push(Set.deleteMany({ liftID }));
+  });
+
+  await Promise.all(deletionPromises);
+});
+
+LiftSchema.pre('deleteOne', async function () {
+  const deletionPromises = [Set.deleteMany({ liftID: this._conditions._id })];
+
+  await Promise.all(deletionPromises);
 });
 
 module.exports = mongoose.model('Lift', LiftSchema);

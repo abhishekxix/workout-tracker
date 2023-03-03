@@ -1,5 +1,7 @@
 const { default: mongoose } = require('mongoose');
 const moment = require('moment');
+const Lift = require('./Lift');
+const CardioSession = require('./CardioSession');
 
 const WorkoutSessionSchema = new mongoose.Schema({
   userID: {
@@ -51,5 +53,30 @@ WorkoutSessionSchema.index(
   { startTime: 1, endTime: 1, dailyStatID: 1 },
   { unique: true },
 );
+
+WorkoutSessionSchema.pre('deleteMany', async function () {
+  const documentsToBeDeleted = await this.model.find(this.getFilter());
+  const deletionPromises = [];
+
+  documentsToBeDeleted.forEach(({ _id: workoutSessionID }) => {
+    deletionPromises.push(
+      ...[
+        Lift.deleteMany({ workoutSessionID }),
+        CardioSession.deleteMany({ workoutSessionID }),
+      ],
+    );
+  });
+
+  await Promise.all(deletionPromises);
+});
+
+WorkoutSessionSchema.pre('deleteOne', async function () {
+  const deletionPromises = [
+    Lift.deleteMany({ workoutSessionID: this._conditions._id }),
+    CardioSession.deleteMany({ workoutSessionID: this._conditions._id }),
+  ];
+
+  await Promise.all(deletionPromises);
+});
 
 module.exports = mongoose.model('WorkoutSession', WorkoutSessionSchema);

@@ -1,4 +1,5 @@
 const { default: mongoose } = require('mongoose');
+const OptionalAttribute = require('./OptionalAttribute');
 
 const CardioSessionSchema = new mongoose.Schema({
   userID: {
@@ -31,6 +32,25 @@ const CardioSessionSchema = new mongoose.Schema({
     required: true,
     ref: 'WorkoutSession',
   },
+});
+
+CardioSessionSchema.pre('deleteMany', async function () {
+  const documentsToBeDeleted = await this.model.find(this.getFilter());
+  const deletionPromises = [];
+
+  documentsToBeDeleted.forEach(({ _id: cardioSessionID }) => {
+    deletionPromises.push(OptionalAttribute.deleteMany({ cardioSessionID }));
+  });
+
+  await Promise.all(deletionPromises);
+});
+
+CardioSessionSchema.pre('deleteOne', async function () {
+  const deletionPromises = [
+    OptionalAttribute.deleteMany({ cardioSessionID: this._conditions._id }),
+  ];
+
+  await Promise.all(deletionPromises);
 });
 
 module.exports = mongoose.model('CardioSession', CardioSessionSchema);

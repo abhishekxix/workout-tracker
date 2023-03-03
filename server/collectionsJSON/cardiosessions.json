@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "64018eb91efbb8cdfe53fa31"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "name": "Steady cardio",
+  "duration": 500,
+  "workoutSessionID": {
+    "$oid": "64018e971efbb8cdfe53fa28"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64018ec31efbb8cdfe53fa34"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "name": "HIIT cardio",
+  "duration": 500,
+  "workoutSessionID": {
+    "$oid": "64018e971efbb8cdfe53fa28"
+  },
+  "__v": 0
+}]

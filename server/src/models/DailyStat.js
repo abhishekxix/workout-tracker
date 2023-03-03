@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Measurement = require('./Measurement');
+const WorkoutSession = require('./WorkoutSession');
 
 const DailyStatSchema = new mongoose.Schema({
   date: {
@@ -47,6 +49,31 @@ const DailyStatSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
+});
+
+DailyStatSchema.pre('deleteMany', async function () {
+  const documentsToBeDeleted = await this.model.find(this.getFilter());
+  const deletionPromises = [];
+
+  documentsToBeDeleted.forEach(({ _id: dailyStatID }) => {
+    deletionPromises.push(
+      ...[
+        Measurement.deleteMany({ dailyStatID }),
+        WorkoutSession.deleteMany({ dailyStatID }),
+      ],
+    );
+  });
+
+  await Promise.all(deletionPromises);
+});
+
+DailyStatSchema.pre('deleteOne', async function () {
+  const deletionPromises = [
+    Measurement.deleteMany({ dailyStatID: this._conditions._id }),
+    WorkoutSession.deleteMany({ dailyStatID: this._conditions._id }),
+  ];
+
+  await Promise.all(deletionPromises);
 });
 
 const DailyStat = mongoose.model('DailyStat', DailyStatSchema);

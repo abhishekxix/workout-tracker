@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "64018ea51efbb8cdfe53fa2b"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "workoutSessionID": {
+    "$oid": "64018e971efbb8cdfe53fa28"
+  },
+  "name": "bench press",
+  "type": "barbell",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64018eae1efbb8cdfe53fa2e"
+  },
+  "userID": {
+    "$oid": "64018e301efbb8cdfe53fa1a"
+  },
+  "workoutSessionID": {
+    "$oid": "64018e971efbb8cdfe53fa28"
+  },
+  "name": "pin press",
+  "type": "barbell",
+  "__v": 0
+}]
