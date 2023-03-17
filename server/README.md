@@ -7,17 +7,13 @@
 ## Setup the following .env variables
 
 - `PORT`
-- `COOKIE_SECRET`
-- `JWT_SECRET`
 - `MONGO_URI`
+- `SENDER_EMAIL`
+- `SENDER_PASSWORD`
+- `JWT_SECRET`
 - `JWT_VERIFICATION_LIFETIME`
-- `LOGIN_LIFETIME`
-- `MAILER_USER`
-- `MAILER_PASSWORD`
-- `TWILIO_SID`
-- `TWILIO_AUTH_TOKEN`
-- `TWILIO_SMS_PHONE_NUMBER`
-- `SERVER_URL`
+- `COOKIE_SECRET`
+- `AUTH_TOKEN_LIFETIME`
 
 To connect to a local mongodb instance set `MONGO_URI=mongodb://127.0.0.1:27017/workout-app`
 
@@ -32,3 +28,5 @@ To connect to a local mongodb instance set `MONGO_URI=mongodb://127.0.0.1:27017/
 ## Start the server in dev mode
 
 `npm run dev`
+
+## [API DOCS](https://documenter.getpostman.com/view/15915035/2s93Jxt2Vv)
