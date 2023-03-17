@@ -30,3 +30,5 @@ To connect to a local mongodb instance set `MONGO_URI=mongodb://127.0.0.1:27017/
 `npm run dev`
 
 ## [API DOCS](https://documenter.getpostman.com/view/15915035/2s93Jxt2Vv)
+
+## ADIOS
